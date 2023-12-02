@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Flask App</title>
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+    </head>
+    <body>
+        <div>
+            <h1>Click Button</h1>
+
+            <button onclick="fetchNumber()">Get Number</button>
+
+            <p id="numberDisplay"></p>
+
+            <script>
+                function fetchNumber() {
+                    fetch('/get_number')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+
+                        .then(data => {
+                            document.getElementById("numberDisplay").innerText = 'Returned Number ' + data.number;
+                        })
+                        .catch(error => {
+                            console.error('Error fetching number', error)
+                        })
+                }
+            </script>
+        </div>
+    </body>
+</html>

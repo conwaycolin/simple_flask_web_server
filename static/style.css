@@ -1,10 +1,33 @@
 body {
-    background-color: lightblue;
     margin: 0;
     padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-position: center;
+    color: rgb(5, 20, 44);
+    background-color: rgb(5, 20, 44);
 }
 
-h1 {
+.weather-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.weather-box {
     text-align: center;
-    color: white;
+    padding: 20px;
+    background: lightblue;
+    border-radius: 10px;
+}
+
+#time-container {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.weather-info {
+    font-size: 42px;
+    margin-bottom: 10px;
 }

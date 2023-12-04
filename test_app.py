@@ -11,10 +11,13 @@ def client():
 def test_index(client):
     response = client.get("/")
     assert response.status_code == 200
+    assert b"<h1>Bethlehem, PA</h1>" in response.data
 
-def test_get_number(client):
-    response = client.get("/get_number")
+def test_get_temperature_route(client):
+    response = client.get("/get_temperature")
     assert response.status_code == 200
-    data = json.loads(response.data.decode("utf-8"))
-    assert 'number' in data
-    assert isinstance(data['number'], int)
+
+def test_get_conditions_route(client):
+    response = client.get("/get_conditions")
+    assert response.status_code == 200
+

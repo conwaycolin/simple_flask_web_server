@@ -2,7 +2,7 @@
 
 Author: Colin Conway
 
-Simple flask web server with no real purpose but to return a number
+Simple flask web server that displays time and weather for bethlehem, pa
 
 # Setup
 
